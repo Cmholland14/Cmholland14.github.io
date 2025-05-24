@@ -1,140 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
     }
 
-    /*flexbox layout for the page */
-    .container {
-        display: flex;
+
+    #page {
+      display: flex;
     }
 
-     /* Style for the image above the navigation */
-    .header-image img {
-      width: 100%;
-      max-width: 100px; /* Limit the width of the image */
-      border-radius: 8px; /* Optional: Add rounded corners to the image */
-      margin-bottom: 10px; /* Add space between the image and the menu */
-    }
-
-    /*navigation styles */
-    nav {
+    #page .left-panel {
+      width: 300px;
+      height: 100vh;
       background-color: #333;
-      width: 200px;
-      height: 100vh; /*full viewport height */
-      padding: 20px;
     }
 
-    ul.menu {
+    #page .right-panel {
+      flex: auto;
+      height: 100vh;
+      overflow-y: scroll;
+    }
+
+
+    /*full height of the page */
+    /*.container {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }*/
+
+    /*Header section */
+    header {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    header p {
+      font-size: 1.25rem;
+    }
+
+    /* Navigation bar */
+    nav {
+      color: white;
+      padding-top: 50px;
+      transition: all 0.3s;
+    }
+
+    nav ul {
       list-style-type: none;
-      padding: 0;
+      padding-left: 0;
     }
 
-    ul.menu li {
-      margin: 10px 0;
+    nav ul li {
+      margin: 20px 0;
     }
 
-    ul.menu li a {
+    nav ul li a {
       color: white;
       text-decoration: none;
-      padding: 14px 20px;
       display: block;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    ul.menu li a:hover {
-      background-color: #575757;
-      border-radius: 4px;
+    nav ul li a:hover {
+      background-color: #444;
     }
 
-    /*Content Styles */
+    /* Main content */
     .content {
-        flex: 1;
-        padding: 20px;
+      /* Space for the fixed nav */
+      background-color: #f8f9fa;
     }
 
-    h2 {
-        color: #333;
+    .content section {
+      margin-bottom: 30px;
+      padding: 30px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Responsiveness: Adjust the layout on small screens */
+    @media (max-width: 768px) {
+      nav {
+        width: 100%;
+        height: auto;
+        position: static;
+      }
+
+      .content {
+        margin-left: 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Flex container to wrap the menu and content -->
-  <div class="container">
- 
-    <!-- Header Image-->
- 
-    <div class="header-image">
-      <img src="violet.jpg" alt="Profile Picture"> <!-- Replace with your image path -->
+  <div id="page">
+
+    <div class="left-panel">
+      <!-- Header Section -->
+      <header>
+        <h1>Hi, I'm Cat</h1>
+        <p>Software Engineering Student</p>
+        <!-- Side Navigation Bar -->
+        <nav>
+          <img src="cat.jpg.jpg" alt="Logo" style="display: block; margin: 0 auto; width: 150px; padding-bottom: 20px;">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#skills">Interests & Hobbies</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
     </div>
 
+    <!-- Main Layout -->
+    <div class="right-panel">
+      <!-- Main Content Area -->
+      <div class="content">
+        <section id="about">
+          <h2>About Me</h2>
+          <p>I am passionate about software development and learning new technologies. This is my personal portfolio
+            site.
+          </p>
+        </section>
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+          </ul>
+        </section>
+        <section id="Interests & Hobbies">
+          <h2>Interest & Hobbies</h2>
+          <ul>
+            <li>Writing Code</li>
+            <li>Reading</li>
+            <li>Hiking</li>
+          </ul>
+        </section>
+        <section id="portfolio">
+          <h2>Portfolio</h2>
+          <div class="row">
+            <!-- Example Card for Portfolio -->
+            <div class="col-md-4">
+              <div class="card">
+                <img src="violet.jpg" class="card-img-top" alt="Project 1">
+                <div class="card-body">
+                  <h5 class="card-title">Project 1</h5>
+                  <p class="card-text">Flower project</p>
+                </div>
+              </div>
+            </div>
+            <!-- Add more projects here -->
+          </div>
+        </section>
 
-    <!--Navigation Menu Bar-->
-  <nav>
-    <ul class="menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#dropdown">Dropdown</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Email: cat.t@gmail.com</p>
+          <p>Tel: 0224562894</p>
+        </section>
+      </div>
 
-  <!-- Main Content-->
-<div class="content"></div>
- <header>
-    <h1>Hi, I'm Violet<Violet></h1>
-    <p>Software Engineering Student</p>
-  </header>
+      <!-- Footer Section -->
+      <footer>
+        <p>Connect with me:</p>
+        <a href="https://github.com/VioletT12" target="_blank">GitHub</a>
+        <a href="mailto:violet.t@gmail.com">Email</a>
+      </footer>
+    </div>
 
-   <section id="about">
-    <h2>About Me</h2>
-    <p>I am passionate about software development and learning new technologies. This is my personal portfolio site.</p>
-  </section>
-
-   <section id="Skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-    </ul>
-
-</section id="interests">
-  <h2>Interests/Hobbies</h2>
-    <ul>
-        <li>Writing Code</li>
-        <li>Video Games</li>
-        <li>Reading</li>
-    </ul>
-  </section>
+  </div>
 
 </body>
-</html>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Project 1:</strong> Description of project 1</li>
-      <li><strong>Project 2:</strong> Description of project 2</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>email: violet.t@gmail.com</p> 
-    <p>tel: 0224562894</p>
-    <p>GitHub: <a href="https://github.com/VioletT12" target="_blank">VioletT12</a></p>
-  </section>
-  
-</body>
 </html>
