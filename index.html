@@ -1,51 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <style>
-    body {
+    body, html {
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      margin: 2em;
     }
-    header {
-      text-align: center;
+
+    /*flexbox layout for the page */
+    .container {
+        display: flex;
     }
-    section {
-      margin-top: 2em;
+
+     /* Style for the image above the navigation */
+    .header-image img {
+      width: 100%;
+      max-width: 100px; /* Limit the width of the image */
+      border-radius: 8px; /* Optional: Add rounded corners to the image */
+      margin-bottom: 10px; /* Add space between the image and the menu */
+    }
+
+    /*navigation styles */
+    nav {
+      background-color: #333;
+      width: 200px;
+      height: 100vh; /*full viewport height */
+      padding: 20px;
+    }
+
+    ul.menu {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul.menu li {
+      margin: 10px 0;
+    }
+
+    ul.menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      display: block;
+    }
+
+    ul.menu li a:hover {
+      background-color: #575757;
+      border-radius: 4px;
+    }
+
+    /*Content Styles */
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #333;
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- Flex container to wrap the menu and content -->
+  <div class="container">
+ 
+    <!-- Header Image-->
+ 
+    <div class="header-image">
+      <img src="violet.jpg" alt="Profile Picture"> <!-- Replace with your image path -->
+    </div>
+
+
+    <!--Navigation Menu Bar-->
+  <nav>
+    <ul class="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#dropdown">Dropdown</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content-->
+<div class="content"></div>
+ <header>
     <h1>Hi, I'm Violet<Violet></h1>
     <p>Software Engineering Student</p>
   </header>
-  
-  <section>
+
+   <section id="about">
     <h2>About Me</h2>
     <p>I am passionate about software development and learning new technologies. This is my personal portfolio site.</p>
   </section>
 
-    <section>
+   <section id="Skills">
     <h2>Skills</h2>
-
     <ul>
         <li>HTML</li>
         <li>CSS</li>
         <li>Javascript</li>
     </ul>
 
-    <section>
-        <h2>Interests/Hobbies</h2>
+</section id="interests">
+  <h2>Interests/Hobbies</h2>
     <ul>
         <li>Writing Code</li>
         <li>Video Games</li>
         <li>Reading</li>
     </ul>
-
   </section>
 
-  <section>
+</body>
+</html>
+
+<section id="projects">
     <h2>Projects</h2>
     <ul>
       <li><strong>Project 1:</strong> Description of project 1</li>
@@ -53,9 +129,12 @@
     </ul>
   </section>
 
-  <section>
-    <h2>email: violet.t@gmail.com tel: 0224562894</h2>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>email: violet.t@gmail.com</p> 
+    <p>tel: 0224562894</p>
     <p>GitHub: <a href="https://github.com/VioletT12" target="_blank">VioletT12</a></p>
   </section>
+  
 </body>
 </html>
